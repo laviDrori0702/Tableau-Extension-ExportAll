@@ -16,6 +16,7 @@
     "start": "vite",
     "build": "vite build",
     "release": "vite build && copyfiles -f ./build/index.html ./build/configure && copyfiles -f ./build/index.html ./build/desktopexport",
+    "preview": "vite preview --port 8080 --strictPort",
     "test": "vitest run"
   },
   "devDependencies": {

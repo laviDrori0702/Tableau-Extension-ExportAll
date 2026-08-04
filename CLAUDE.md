@@ -20,8 +20,11 @@ Migrated off Create React App 4 in SEC-2 (#3) — CRA's dependency tree carried 
 npm start        # vite dev server on :5173 (must be loaded from Tableau to work — see below)
 npm run build    # vite build to ./build
 npm run release  # build + duplicate index.html into build/configure and build/desktopexport
+npm run preview  # serve ./build at http://localhost:8080 — needs `npm run release` first
 npm test         # vitest, single run (not watch — use `npx vitest` for watch)
 ```
+
+**Testing in Tableau without hosting anything.** `npm run preview` serves the built `build/` at the domain root of `localhost:8080`, which happens to reproduce what `now.json` does in production: real files served as files, everything else falling through to the root `index.html`. Tableau **Desktop** accepts a plain-`http://localhost` extension URL, so the full functional path is testable locally — point a manifest's `<url>` at `http://localhost:8080` and add it to a dashboard. Keep that manifest as `ExportAll.local.trex` (gitignored) rather than editing `ExportAll.trex`, whose `<url>` is a shipped value. Tableau **Server/Cloud** is stricter: it generally needs HTTPS and the extension URL allowlisted by a Tableau admin, so Server testing needs a real deployment.
 
 `src/containers/Main.test.js` covers `normalizePath` only — there is no render/integration coverage. It runs under vitest via `test: { globals: true, environment: 'jsdom' }` in `vite.config.mjs`: `globals` because the test uses bare `it`/`expect` as CRA's Jest allowed, and `jsdom` because importing `Main` pulls in `@tableau/tableau-ui`, which touches `self` at module scope.
 
@@ -76,7 +79,7 @@ Two other CI surfaces exist alongside it, both added in SEC-4: `.github/workflow
 
 Audit evidence, SBOMs, waiver requests and the remediation write-up for the SEC-0…SEC-6 work live in `security/` — see `security/REMEDIATION-SUMMARY.md` first. Those files are generated evidence; regenerate them rather than hand-editing, and write them **without** a BOM (a BOM makes the `.cdx.json` SBOMs fail `JSON.parse`).
 
-Note the release artifact is just `build/`, which is verifiable locally — but the deployed site also depends on `now.json`'s route table, which no local build or static file server exercises. A green `npm run release` is not evidence that the deployment works.
+Note the release artifact is just `build/`, which is verifiable locally — but the deployed site also depends on `now.json`'s route table, which no build exercises. A green `npm run release` is not evidence that the deployment works. `deploy.test.js` closes part of that gap: it resolves request paths against `now.json`'s routes with Vercel's own first-match-wins semantics, asserts the asset paths never fall through to the catch-all, asserts the catch-all stays last, checks the `now.json`/`ExportAll.trex` root-vs-`public` copies are byte-identical, and fails if a new directory appears in `build/` without a route above the catch-all. What it still cannot prove is that Vercel itself behaves as modelled — only a deployment shows that.
 
 `ExportAll.trex`'s `<url>` points at the hosted deployment; local installs edit that tag to their own web server.
 

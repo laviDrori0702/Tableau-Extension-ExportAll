@@ -12,6 +12,8 @@
 /build
 # release candidate zip (built locally by `npm run release` + zip; CI creates its own)
 /v*.zip
+# local-only manifest pointing at `npm run preview` — never shipped to a customer
+/ExportAll.local.trex
 
 # misc
 .DS_Store
