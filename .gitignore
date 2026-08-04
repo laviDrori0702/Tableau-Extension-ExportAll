@@ -10,6 +10,8 @@
 
 # production
 /build
+# release candidate zip (built locally by `npm run release` + zip; CI creates its own)
+/v*.zip
 
 # misc
 .DS_Store
