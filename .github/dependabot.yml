@@ -5,3 +5,11 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+  # Watches .github/workflows/**. Without this the SHA pin on
+  # softprops/action-gh-release (release.yml:42) never sees upstream fixes, and
+  # goes stale silently until a release breaks on a retired action runtime.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
