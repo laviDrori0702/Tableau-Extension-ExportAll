@@ -31,6 +31,8 @@ npm test         # vitest, single run (not watch — use `npx vitest` for watch)
 
 `.npmrc` sets `legacy-peer-deps=true`: every published `@tableau/tableau-ui` declares a `react@^16` peer while the app runs 17, which npm 7+ treats as a hard error. Nothing is upgraded to satisfy it. Side effect — this suppresses *all* peer conflicts, so a genuine one in a future dependency bump will pass silently.
 
+**`xlsx` is pinned to a `https://cdn.sheetjs.com/...tgz` URL, not an npm version — that is deliberate, don't "fix" it.** SheetJS stopped publishing to npm at 0.18.5, which is still vulnerable to CVE-2023-30533 and CVE-2024-22363; fixed builds (0.20.3 here, from SEC-3 / #4) exist only in SheetJS's own registry. A consequence of tarball installs: `npm outdated`/`npm update` can't see newer versions, so upgrades are manual — re-run `npm install https://cdn.sheetjs.com/xlsx-<ver>/xlsx-<ver>.tgz`. Since 0.18 there is no default export, hence `import * as XLSX` in `func.js`.
+
 ## Architecture
 
 **Three routes, one bundle.** `src/containers/Main.jsx` is the single stateful container, holding all settings state (`meta`, button label/style, filename) and passing mutation handlers down:

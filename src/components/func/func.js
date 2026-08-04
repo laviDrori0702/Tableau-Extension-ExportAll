@@ -1,4 +1,4 @@
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
 // Declare this so our linter knows that tableau is a global object
