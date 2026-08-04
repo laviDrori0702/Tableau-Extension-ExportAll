@@ -1,0 +1,16 @@
+# npm audit report
+
+xlsx  *
+Severity: high
+Denial of Service in SheetJS Pro - https://github.com/advisories/GHSA-g973-978j-2c3p
+Denial of Service in SheetJS Pro - https://github.com/advisories/GHSA-3x9f-74h4-2fqr
+Denial of Service in SheetsJS Pro - https://github.com/advisories/GHSA-8vcr-vxm8-293m
+Prototype Pollution in sheetJS - https://github.com/advisories/GHSA-4r6h-8v6p-xvw6
+SheetJS Regular Expression Denial of Service (ReDoS) - https://github.com/advisories/GHSA-5pgg-2g8v-p4x9
+No fix available
+node_modules/xlsx
+
+1 high severity vulnerability
+
+Some issues need review, and may require choosing
+a different dependency.
