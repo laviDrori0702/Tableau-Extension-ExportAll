@@ -54,7 +54,8 @@ tableau-extension-exportall@2.3.1 C:\Users\lavid\PyCharmMiscProject\Tableau-Exte
 ### Why the classification fires
 
 The package declares a non-SPDX license string, so Sonatype cannot map it to a known license and
-classifies it as non-standard. From `node_modules/@tableau/tableau-ui/package.json`:
+classifies it as non-standard. Quoted below from the **installed 3.14.0** (see
+[Version note](#version-note) — `^3.2.0` resolves there), `node_modules/@tableau/tableau-ui/package.json`:
 
 ```json
 "license": "SEE LICENSE IN LICENSE"

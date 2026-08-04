@@ -72,6 +72,10 @@ The Tableau Extensions API is loaded from `public/js/tableau.extensions.1.4.0.mi
 
 Version lives in **three** places and must be bumped together: `package.json`, `ExportAll.trex` (`extension-version`), and `public/ExportAll.trex` (currently byte-identical to the root one; `now.json`/`public/now.json` likewise — keep both copies in sync when editing either). Pushing a `v*` tag triggers `.github/workflows/release.yml`, which runs `npm run release`, zips `build/` as `v#.#.#.zip`, and creates a **draft** GitHub release. That workflow pins Node **20** (resolves to the latest 20.x) — Vite 8 requires `^20.19 || >=22.12`, so it cannot go back to the old 12.x pin, and a pin narrower than 20.19 would break the build.
 
+Two other CI surfaces exist alongside it, both added in SEC-4: `.github/workflows/audit.yml` (`npm audit --omit=dev --audit-level=high` on push to `master`, weekly on a cron, and on demand — it duplicates `release.yml`'s Node pin and audit gate, so bump both together) and `.github/dependabot.yml`. `audit.yml`'s push trigger still lists the `security-remediation` branch; drop that entry once the branch is merged and deleted.
+
+Audit evidence, SBOMs, waiver requests and the remediation write-up for the SEC-0…SEC-6 work live in `security/` — see `security/REMEDIATION-SUMMARY.md` first. Those files are generated evidence; regenerate them rather than hand-editing, and write them **without** a BOM (a BOM makes the `.cdx.json` SBOMs fail `JSON.parse`).
+
 Note the release artifact is just `build/`, which is verifiable locally — but the deployed site also depends on `now.json`'s route table, which no local build or static file server exercises. A green `npm run release` is not evidence that the deployment works.
 
 `ExportAll.trex`'s `<url>` points at the hosted deployment; local installs edit that tag to their own web server.
