@@ -37,7 +37,9 @@ jobs:
       - name: Create zip archive
         run: zip -qq -r ${{ github.ref_name }}.zip build
       - name: Create draft release
-        uses: softprops/action-gh-release@v2
+        # Pinned to a commit SHA, not the mutable `v2` tag: this is third-party
+        # code running with `contents: write`. Bump deliberately.
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
         with:
           name: Release ${{ github.ref_name }}
           draft: true
