@@ -1,9 +1,13 @@
 import React, { Component }  from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Extension from '../components/Extension/Extension';
 import Configure from '../components/Configure/Configure';
 import DesktopExport from '../components/DesktopExport/DesktopExport';
 import './Main.css';
+
+// Strips a trailing slash and/or "index.html" so "/configure", "/configure/"
+// and "/configure/index.html" all compare equal - the deployed site serves
+// copies of index.html inside those folders.
+export const normalizePath = (pathname) => pathname.replace(/(\/index\.html)?\/*$/, '');
 
 class Main extends Component {
 
@@ -130,45 +134,13 @@ class Main extends Component {
   }
 
   render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/configure">
-            <Configure 
-              label={this.state.button.label} 
-              meta={this.state.meta} 
-              style={this.state.button.style} 
-              filename={this.state.filename} 
-              enableSave={this.state.settingsChanged} 
-              updateMeta={this.metaChangedHandler} 
-              disableButton={this.buttonStateChangedHandler} 
-              updateLabel={this.labelChangedHandler} 
-              changeSettings={this.settingsChangedHandler} 
-              updateButtonStyle={this.buttonStyleChangedHandler} 
-              updateFilename={this.filenameChangedHandler} 
-              resetSettings={this.resetSettingsHandler}/>
-          </Route>
-          <Route path="/desktopexport">
-            <DesktopExport />
-          </Route>
-          <Route path="/">
-            <Extension 
-              label={this.state.button.label} 
-              meta={this.state.meta}
-              metaVersion={this.state.metaVersion}
-              style={this.state.button.style} 
-              filename={this.state.filename} 
-              disabled={this.state.button.disabled} 
-              updateMetaVersion={this.metaVersionChangedHandler}
-              updateMeta={this.metaChangedHandler} 
-              disableButton={this.buttonStateChangedHandler} 
-              updateLabel={this.labelChangedHandler}  
-              updateButtonStyle={this.buttonStyleChangedHandler} 
-              updateFilename={this.filenameChangedHandler} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    );
+    // Static routing: each view is a separate browser context, so the pathname
+    // is fixed for the lifetime of the page - no router needed.
+    const viewPath = normalizePath(window.location.pathname);
+    console.log(`[Main.js] Rendering view for path ${viewPath}`);
+    if (viewPath.endsWith('/configure')) return this.renderConfigure();
+    if (viewPath.endsWith('/desktopexport')) return this.renderDesktopExport();
+    return this.renderExtension();
   }
 }
 

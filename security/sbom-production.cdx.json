@@ -1,0 +1,2204 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:914f105d-8ab5-49f9-98a2-bc807c692eb2",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-04T12:56:46.468Z",
+    "lifecycles": [
+      {
+        "phase": "build"
+      }
+    ],
+    "tools": [
+      {
+        "vendor": "npm",
+        "name": "cli",
+        "version": "11.5.2"
+      }
+    ],
+    "component": {
+      "bom-ref": "tableau-extension-exportall@2.3.1",
+      "type": "library",
+      "name": "Tableau-Extension-ExportAll",
+      "version": "2.3.1",
+      "scope": "required",
+      "purl": "pkg:npm/tableau-extension-exportall@2.3.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:private",
+          "value": "true"
+        }
+      ],
+      "externalReferences": []
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "@babel/runtime@7.29.7",
+      "type": "library",
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "scope": "required",
+      "author": "The Babel Team",
+      "description": "babel's modular runtime helpers",
+      "purl": "pkg:npm/%40babel/runtime@7.29.7",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.29.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/babel/babel.git"
+        },
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-runtime"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/babel/babel/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "36af0e8465a264864657a84b1e8c8028b2dc26284fff115e04c189a14af14d7da9b08f1d0a27f32e16484856fe5564b7c053110e6086c3947e74ec920aa3cb87"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@emotion/hash@0.8.0",
+      "type": "library",
+      "name": "@emotion/hash",
+      "version": "0.8.0",
+      "scope": "required",
+      "description": "A MurmurHash2 implementation",
+      "purl": "pkg:npm/%40emotion/hash@0.8.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/emotion-js/emotion.git#master"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/emotion-js/emotion/tree/master#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/emotion-js/emotion/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "90126d7fb3c7e9a5b067a7e46b7cd0d29e92058cf1e1f9752e865713646b9d8493f579639bb59f289ad4e20fd7af705e83bd8c2eba750163549ae6094cbec2a3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/core@4.12.4",
+      "type": "library",
+      "name": "@material-ui/core",
+      "version": "4.12.4",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "React components that implement Google's Material Design.",
+      "purl": "pkg:npm/%40material-ui/core@4.12.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/core/-/core-4.12.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://mui.com/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b6bef17a436533d2e303aa5a80998bf100a06576ae6d65309099e861c30a778830fede178b2be74e48dd1ab51589cc81d81b1d680bf5b6fa30e396cf338b12c1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/icons@4.11.3",
+      "type": "library",
+      "name": "@material-ui/icons",
+      "version": "4.11.3",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "Material Design Svg Icons converted to Material-UI React components.",
+      "purl": "pkg:npm/%40material-ui/icons@4.11.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/icons/-/icons-4.11.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mui-org/material-ui/tree/master/packages/material-ui-icons"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "20a1e5cb1e8b0e1f27d7dbf3c07e51b4720e1e5f53bbdd1a000c5c6d6304ea4a78766bce0ccdd4bce1c978c203cd46dde26bae24a1e694da0137e9836385e404"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/styles@4.11.5",
+      "type": "library",
+      "name": "@material-ui/styles",
+      "version": "4.11.5",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "Material-UI Styles - The styling solution of Material-UI.",
+      "purl": "pkg:npm/%40material-ui/styles@4.11.5",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/styles/-/styles-4.11.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mui-org/material-ui/tree/master/packages/material-ui-styles"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a3fe35a2de4926252c2044cc13dc152c026b98858bde3d11d018f690238b6d27ea12429fd1f99a3edfb9bed6e5521e5e5ebd92f89ffc2770da09bd74f82ccf18"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/system@4.12.2",
+      "type": "library",
+      "name": "@material-ui/system",
+      "version": "4.12.2",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "Material-UI System - Design system for Material-UI.",
+      "purl": "pkg:npm/%40material-ui/system@4.12.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/system/-/system-4.12.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mui-org/material-ui/tree/master/packages/material-ui-system"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e8248abb632d9a226070219fea7050a4cf1f2e4b81f45e7910a7db7530bcd0d343e70a5398acf07612d82c7df32f870b94ad2055a6a5b56effc0cbb24e73742f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/types@5.1.0",
+      "type": "library",
+      "name": "@material-ui/types",
+      "version": "5.1.0",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "Material-UI Types - Utility types for Material-UI.",
+      "purl": "pkg:npm/%40material-ui/types@5.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/types/-/types-5.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mui-org/material-ui/tree/master/packages/material-ui-types"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "edca918eb639d1bf10cd1498ca14a9c78591c3662e3b428a206404564e49f2ea33d816a76b0ca48191a8584a8a9bba5521bcc50cdd12a4f715578221385925f0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@material-ui/utils@4.11.3",
+      "type": "library",
+      "name": "@material-ui/utils",
+      "version": "4.11.3",
+      "scope": "required",
+      "author": "Material-UI Team",
+      "description": "Material-UI Utils - Utility functions for Material-UI.",
+      "purl": "pkg:npm/%40material-ui/utils@4.11.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@material-ui/utils/-/utils-4.11.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/mui-org/material-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mui-org/material-ui/tree/master/packages/material-ui-utils"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mui-org/material-ui/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "66e40f578ac12bf5758f6748912484707e6e4fa01a1ee29615fa2d0031ec0b4c152f534b7765a41429b86596d7df788ee32765e95d063e780a9bc1d9436a2e8e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tableau/tableau-ui@3.14.0",
+      "type": "library",
+      "name": "@tableau/tableau-ui",
+      "version": "3.14.0",
+      "scope": "required",
+      "description": "React UI components that have the look-and-feel of Tableau.",
+      "purl": "pkg:npm/%40tableau/tableau-ui@3.14.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tableau/tableau-ui/-/tableau-ui-3.14.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6f1e25b7d5153c18c9db3b4e18e3bcc65bcd41d9a2fdd7564652e50afcb1692379d9dda12435a6f741482df2776d016181c56db45f2aeb6dca683fe09b29300d"
+        }
+      ]
+    },
+    {
+      "bom-ref": "@types/react-transition-group@4.4.12",
+      "type": "library",
+      "name": "@types/react-transition-group",
+      "version": "4.4.12",
+      "scope": "required",
+      "description": "TypeScript definitions for react-transition-group",
+      "purl": "pkg:npm/%40types/react-transition-group@4.4.12",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-transition-group"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f1357a4778768fb6bdd5cfb50d77498b74b2a3af73cc865bcfb2e0e6d3913392c4246ed7fc4e9ad55dddad1c81459abbfeeb73ec0f9ce0e8182e22dc6061c6eb"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "classnames@2.5.1",
+      "type": "library",
+      "name": "classnames",
+      "version": "2.5.1",
+      "scope": "required",
+      "author": "Jed Watson",
+      "description": "A simple utility for conditionally joining classNames together",
+      "purl": "pkg:npm/classnames@2.5.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/JedWatson/classnames.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/JedWatson/classnames#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/JedWatson/classnames/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b1a1d83b384842ceb0cb6b15c5333a6d40ec40ee05e7457d450db6a81a447425be23efd69a47b61ce97a952e9d4e97715616fcf3f23af87b3ee37f1cde57d4a3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "clsx@1.2.1",
+      "type": "library",
+      "name": "clsx",
+      "version": "1.2.1",
+      "scope": "required",
+      "author": "Luke Edwards",
+      "description": "A tiny (228B) utility for constructing className strings conditionally.",
+      "purl": "pkg:npm/clsx@1.2.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/lukeed/clsx.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/lukeed/clsx#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/lukeed/clsx/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "11c47aaf96bc6e3ea9bb7c9cb1afc4fdc2951ae4e064965db325181ce92c1bf50722229f8f1cd1c58269c9507061a41e3af8216a5f5f71ce0f89d960cee80042"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "compare-versions@3.6.0",
+      "type": "library",
+      "name": "compare-versions",
+      "version": "3.6.0",
+      "scope": "required",
+      "author": "Ole Michelsen",
+      "description": "Compare semver version strings to find greater, equal or lesser.",
+      "purl": "pkg:npm/compare-versions@3.6.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/compare-versions/-/compare-versions-3.6.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/omichelsen/compare-versions.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/omichelsen/compare-versions#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/omichelsen/compare-versions/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5ba01fd88c35cf8081eeae2e53886feb8e9d5bd190b8133e6290b452f5025920fcc3dd12263a7eba326e5da10cb405c1b52a867cc3ee14e567e3ff8595aa9f04"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "css-vendor@2.0.8",
+      "type": "library",
+      "name": "css-vendor",
+      "version": "2.0.8",
+      "scope": "required",
+      "author": "Oleg Slobodskoi",
+      "description": "CSS vendor prefix detection and property feature testing.",
+      "purl": "pkg:npm/css-vendor@2.0.8",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/css-vendor/-/css-vendor-2.0.8.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+ssh://git@github.com/cssinjs/css-vendor.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/cssinjs/css-vendor#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/css-vendor/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c7d02ad174c89f1ae4b8578729b602ef3598f1a8bba89d382b177d327bdb0b5b8ee436a0c681d08e6e09bc6faf09d5cea05b428db2f65d265fc66a186bdb9055"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "csstype@2.6.21",
+      "type": "library",
+      "name": "csstype",
+      "version": "2.6.21",
+      "scope": "required",
+      "author": "Fredrik Nicol",
+      "description": "Strict TypeScript and Flow types for style based on MDN data",
+      "purl": "pkg:npm/csstype@2.6.21",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/csstype/-/csstype-2.6.21.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/frenic/csstype.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/frenic/csstype#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/frenic/csstype/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6753e19a89887f2a4ea6832345007bd237efcbfc314f9d2a5b4f185cee65308264addab8c8e4d1f805bb16abad49c981f4d90bc31a3e8d4fa464b6e87d966aff"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "dom-helpers@5.2.1",
+      "type": "library",
+      "name": "dom-helpers",
+      "version": "5.2.1",
+      "scope": "required",
+      "author": "Jason Quense",
+      "description": "tiny modular DOM lib for ie9+",
+      "purl": "pkg:npm/dom-helpers@5.2.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/react-bootstrap/dom-helpers.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/react-bootstrap/dom-helpers#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/react-bootstrap/dom-helpers/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9d109aec22b7553accd8d986908cb871b2bb219960044fcf60c9f9e6bad779faf9c570cfd0b76d7cf9db9450e855d7007ec949ee8afa8aa0149f1d0208621640"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "csstype@3.2.3",
+      "type": "library",
+      "name": "csstype",
+      "version": "3.2.3",
+      "scope": "required",
+      "author": "Fredrik Nicol",
+      "description": "Strict TypeScript and Flow types for style based on MDN data",
+      "purl": "pkg:npm/csstype@3.2.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/frenic/csstype.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/frenic/csstype#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/frenic/csstype/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cf51c629c632db103c00641fc2b9f43c0cbe3c1ed7fc64a3dd45495bda8aca7e37c566be825e675e6538aaa2cc4735952c50bc2aeb145fc4ffd240a2398a4021"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "file-saver@2.0.5",
+      "type": "library",
+      "name": "file-saver",
+      "version": "2.0.5",
+      "scope": "required",
+      "author": "Eli Grey",
+      "description": "An HTML5 saveAs() FileSaver implementation",
+      "purl": "pkg:npm/file-saver@2.0.5",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/file-saver/-/file-saver-2.0.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eligrey/FileSaver.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eligrey/FileSaver.js#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eligrey/FileSaver.js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3fd6e6c99de1fcf446f8dce06beadb748e0e129343cc0572cbbe2e54ef404e0ccb2ba56d02c6326c5ffe4ce0afadcd0c3bbf7777afb8da52f2653c3bfc0ad5cc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "free-style@2.6.1",
+      "type": "library",
+      "name": "free-style",
+      "version": "2.6.1",
+      "scope": "required",
+      "author": "Blake Embrey",
+      "description": "Make CSS easier and more maintainable by using JavaScript",
+      "purl": "pkg:npm/free-style@2.6.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/free-style/-/free-style-2.6.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/blakeembrey/free-style.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/blakeembrey/free-style"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/blakeembrey/free-style/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b9a540f1ee7bb6f86b14a025eb1df648622b185068793005b5f1c3cd6c633e1897422531388e8411d11179192334ed87f5771d3095d7127307c3c43b88c60b6f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "hoist-non-react-statics@3.3.2",
+      "type": "library",
+      "name": "hoist-non-react-statics",
+      "version": "3.3.2",
+      "scope": "required",
+      "author": "Michael Ridgway",
+      "description": "Copies non-react specific statics from a child component to a parent component",
+      "purl": "pkg:npm/hoist-non-react-statics@3.3.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/mridgway/hoist-non-react-statics.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/mridgway/hoist-non-react-statics#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/mridgway/hoist-non-react-statics/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "fe01a2bf18bc24f296366fd6d234a6cdc30fa5fa4f2dcddd63fe86c615f6850f621a3dda0df925578113ecd8caa528a72e9279bda7daf62886204660d7449f07"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-is@16.13.1",
+      "type": "library",
+      "name": "react-is",
+      "version": "16.13.1",
+      "scope": "required",
+      "description": "Brand checking of React Elements.",
+      "purl": "pkg:npm/react-is@16.13.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "db87baca71361fe38ab7892ab0ebcd77c901a55eb9ce8c5b038055b04381dc0455590922fc31f3694a02e4ab8e37f06271c0da0824d906e39c7d9b3bd2447c6d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "hyphenate-style-name@1.1.0",
+      "type": "library",
+      "name": "hyphenate-style-name",
+      "version": "1.1.0",
+      "scope": "required",
+      "author": "Espen Hovlandsdal",
+      "description": "Hyphenates a camelcased CSS property name",
+      "purl": "pkg:npm/hyphenate-style-name@1.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/hyphenate-style-name/-/hyphenate-style-name-1.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+ssh://git@github.com/rexxars/hyphenate-style-name.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/rexxars/hyphenate-style-name#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/rexxars/hyphenate-style-name/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5830bfba2d95551af3de33958be5ed8ea9038e25634ed15a006896dfb93a6fea21c90e7060338692f0996bcf87d27c77832befd3e0524fdc6e3a0232190d3483"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-in-browser@1.1.3",
+      "type": "library",
+      "name": "is-in-browser",
+      "version": "1.1.3",
+      "scope": "required",
+      "author": "Jared Anderson",
+      "description": "Simple check to see if current app is running in browser",
+      "purl": "pkg:npm/is-in-browser@1.1.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-in-browser/-/is-in-browser-1.1.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tuxsudo/is-in-browser.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/tuxsudo/is-in-browser#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tuxsudo/is-in-browser/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "15e5c80601bf08f19dfd6531b84caf8064c47f0886f59e04286c6334c46abe288821fb2682ba671cb7df103770507a8dbdad55116f75a37c414ff9bc125825f6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "js-tokens@4.0.0",
+      "type": "library",
+      "name": "js-tokens",
+      "version": "4.0.0",
+      "scope": "required",
+      "author": "Simon Lydell",
+      "description": "A regex that tokenizes JavaScript.",
+      "purl": "pkg:npm/js-tokens@4.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/lydell/js-tokens.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/lydell/js-tokens#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/lydell/js-tokens/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "45d2547e5704ddc5332a232a420b02bb4e853eef5474824ed1b7986cf84737893a6a9809b627dca02b53f5b7313a9601b690f690233a49bce0e026aeb16fcf29"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss@10.10.0",
+      "type": "library",
+      "name": "jss",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "A lib for generating Style Sheets with JavaScript.",
+      "purl": "pkg:npm/jss@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss/-/jss-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "72ab0e4d2ee3a8fb0f323b4a6035297450b401b85814b4dcb8646aca682674921e43c707efe0205fb612810cbbf705e5a19ab656f01363150e51012f4b557f67"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-camel-case@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-camel-case",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin that allows to write camel cased rule properties",
+      "purl": "pkg:npm/jss-plugin-camel-case@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-camel-case/-/jss-plugin-camel-case-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-camel-case"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-camel-case]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cfe1c44df8f9218805c61d7026750053c8c1c88e3c103fafd1fb93ba12ab3d1fa9441612d840f06eeb14f1a14ea4275886d45cf7384df8f27b88d13ca405b23f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-default-unit@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-default-unit",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin that adds default custom unit to numeric values where needed",
+      "purl": "pkg:npm/jss-plugin-default-unit@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-default-unit/-/jss-plugin-default-unit-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-default-unit"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-default-unit]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4afa5a8f12040a2e090d46c62de7ef35c92623e73655698fe37aa7132ff47a2c33454b1a7e0e435522164b365ee1ddaf157d6ef674433f8e9608557f3d754119"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-global@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-global",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "Global styles for JSS",
+      "purl": "pkg:npm/jss-plugin-global@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-global/-/jss-plugin-global-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-global"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-global]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "89c5c461b32e7e236e59fb9accb78df813493b5e867bcf0e7175396430b6bcba849663326c0df55a2ee567795ffaf82e7d1a1cbcf8fce38de2ae1611816c4ff8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-nested@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-nested",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin that enables support for nested selectors",
+      "purl": "pkg:npm/jss-plugin-nested@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-nested/-/jss-plugin-nested-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-nested"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-nested]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f51e091f1c46822661bab0e8deaecb748883120b40d5b4c6cc06e148fc883966fb66e6eb8d07bc69cc21110e8e10ac9dce997c5c732d4e71301d708044b62a60"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-props-sort@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-props-sort",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin that ensures style properties extend each other instead of override",
+      "purl": "pkg:npm/jss-plugin-props-sort@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-props-sort/-/jss-plugin-props-sort-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-plugin-props-sort"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-props-sort]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e55349bd025b9eafef45f8deeae64b7bf17268ea733ff207d4b3fed1fafcf106a656b1896b4869451c806b479ae14ff72dca2b25f0455720b8c8dd900bbde526"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-rule-value-function@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-rule-value-function",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin for function value and rule syntax",
+      "purl": "pkg:npm/jss-plugin-rule-value-function@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-rule-value-function/-/jss-plugin-rule-value-function-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-rule-value-function]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b84149160682b645de20f8248bc202c3763b54c90bf4611a9fa4aa993f6daa9c0cfbfb7e8717cc51d538c10d0cb4e88c3568709dc90157421e6eb29c64cf42d2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jss-plugin-vendor-prefixer@10.10.0",
+      "type": "library",
+      "name": "jss-plugin-vendor-prefixer",
+      "version": "10.10.0",
+      "scope": "required",
+      "author": "JSS Team",
+      "description": "JSS plugin that handles vendor prefixes in the browser",
+      "purl": "pkg:npm/jss-plugin-vendor-prefixer@10.10.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jss-plugin-vendor-prefixer/-/jss-plugin-vendor-prefixer-10.10.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/cssinjs/jss.git"
+        },
+        {
+          "type": "website",
+          "url": "https://cssinjs.org/jss-plugin-vendor-prefixer"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/cssinjs/jss/issues/new?title=[jss-plugin-vendor-prefixer]"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "518ff8d56ba68235bcaf5a8c08ef25d40460ecd1e77d15564616761369b40cc62caf60c3f75a885cbc8d8625fcde11ecc11ed69b80fea0360d0b5cd60895adaa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "loose-envify@1.4.0",
+      "type": "library",
+      "name": "loose-envify",
+      "version": "1.4.0",
+      "scope": "required",
+      "author": "Andres Suarez",
+      "description": "Fast (and loose) selective `process.env` replacer using js-tokens instead of an AST",
+      "purl": "pkg:npm/loose-envify@1.4.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/zertosh/loose-envify.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/zertosh/loose-envify"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/zertosh/loose-envify/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "972bb13c6aff59f86b95e9b608bfd472751cd7372a280226043cee918ed8e45ff242235d928ebe7d12debe5c351e03324b0edfeb5d54218e34f04b71452a0add"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "object-assign@4.1.1",
+      "type": "library",
+      "name": "object-assign",
+      "version": "4.1.1",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "ES2015 `Object.assign()` ponyfill",
+      "purl": "pkg:npm/object-assign@4.1.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/sindresorhus/object-assign.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/sindresorhus/object-assign#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/sindresorhus/object-assign/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ac98134279149c7d6c170f324fa552537cc3dec5a6bbab19848b1e63c557f8646edcfe85ec5bbe24d0e85df9251256cb2529dcdc55101d57b8714e618fe05c52"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "popper.js@1.16.1-lts",
+      "type": "library",
+      "name": "popper.js",
+      "version": "1.16.1-lts",
+      "scope": "required",
+      "author": "Federico Zivolo",
+      "description": "A kickass library to manage your poppers",
+      "purl": "pkg:npm/popper.js@1.16.1-lts",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1-lts.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/FezVrasta/popper.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://popper.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/FezVrasta/popper.js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2a3c3c9ca465d66f95ad2142a1518fa61f775bfaab48eed992a3e94dfec5e1b93fb2a71f58ad35f5d58152913f7c13ac390635764b3f06671b7e7d6178cfc8b0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "prop-types@15.8.1",
+      "type": "library",
+      "name": "prop-types",
+      "version": "15.8.1",
+      "scope": "required",
+      "description": "Runtime type checking for React props and similar objects.",
+      "purl": "pkg:npm/prop-types@15.8.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/prop-types.git"
+        },
+        {
+          "type": "website",
+          "url": "https://facebook.github.io/react/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/prop-types/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a23f3b0a064809dba5528868815011ec08e50b4df6ed4e1e9782fa780bcea827ae74c0d553435384d695f9bf437f87578123f58173139cf7617deff6a831f972"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react@17.0.2",
+      "type": "library",
+      "name": "react",
+      "version": "17.0.2",
+      "scope": "required",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "purl": "pkg:npm/react@17.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "82784fb7be62fddabfcf7ffaabfd1ab0fefc0f4bb9f760f92f5a5deccf0ff9d724e85bbf8c978bea25552b6ddfa6d494663f158dffbeef05c0f1435c94641c6c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-animate-height@2.1.2",
+      "type": "library",
+      "name": "react-animate-height",
+      "version": "2.1.2",
+      "scope": "required",
+      "author": "Stanko",
+      "description": "Lightweight React component for animating height using CSS transitions.",
+      "purl": "pkg:npm/react-animate-height@2.1.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-animate-height/-/react-animate-height-2.1.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/Stanko/react-animate-height.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/Stanko/react-animate-height"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/Stanko/react-animate-height/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "03d8dfcffe024ddb08b04ed6090b4ef5490ea4c05c05187c2f1c879767a8673d648b4da3a7250be71b79f2069b7740b278b43c7d1c90facda5c95d947eef0ec2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-dom@17.0.2",
+      "type": "library",
+      "name": "react-dom",
+      "version": "17.0.2",
+      "scope": "required",
+      "description": "React package for working with the DOM.",
+      "purl": "pkg:npm/react-dom@17.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b3887de8ab4b0d4425b04361327d5aafcb766c46beabf600b63f293cf7488cf0c604321536cac3f5a5cd5aab2951ee80cca0881b40b51d964ba8b57baa938118"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-is@17.0.2",
+      "type": "library",
+      "name": "react-is",
+      "version": "17.0.2",
+      "scope": "required",
+      "description": "Brand checking of React Elements.",
+      "purl": "pkg:npm/react-is@17.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c361accae90beb62099e569f7ff9d17a03d047de02fd75da9af3169921d1278cbb4ecff8a1c1919931ef3acf0f484ea90777563ab0ff9ee7ae539b1db81b10e3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-transition-group@4.4.5",
+      "type": "library",
+      "name": "react-transition-group",
+      "version": "4.4.5",
+      "scope": "required",
+      "description": "A react component toolset for managing animations",
+      "purl": "pkg:npm/react-transition-group@4.4.5",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/reactjs/react-transition-group.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/reactjs/react-transition-group#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/reactjs/react-transition-group/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a5971dd4c089a222a2051d8d471782460d77b825dbc9d3e7981e0439e46b63be3cd2a3563bc2088101bace50e49bab9132c5115cfb8aab4196b62339f5ae50ea"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "scheduler@0.20.2",
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.20.2",
+      "scope": "required",
+      "description": "Cooperative scheduler for the browser environment.",
+      "purl": "pkg:npm/scheduler@0.20.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/scheduler/-/scheduler-0.20.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/facebook/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d9e59f1a002aa96146aad74c99c2f9cc230ad54f0a957bfc4901468252f7084b5dd1a0d50d681e17f6280a6be59f9e66e734a4dc9ff6d214da48179239bb100d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "tiny-warning@1.0.3",
+      "type": "library",
+      "name": "tiny-warning",
+      "version": "1.0.3",
+      "scope": "required",
+      "author": "Alex Reardon",
+      "description": "A tiny warning function",
+      "purl": "pkg:npm/tiny-warning@1.0.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/alexreardon/tiny-warning.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/alexreardon/tiny-warning#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/alexreardon/tiny-warning/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "94137dccb37fa007faf28df335762b742b7590ff16b22196f0ea3691ae356f620ce492ff4b5093c97d6b5b499bff34ae26e9f4654ac3c71e2caaf612d855b33c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "typestyle@2.0.4",
+      "type": "library",
+      "name": "typestyle",
+      "version": "2.0.4",
+      "scope": "required",
+      "description": "TypeSafe CSS",
+      "purl": "pkg:npm/typestyle@2.0.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/typestyle/-/typestyle-2.0.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/typestyle/typestyle.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/typestyle/typestyle#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typestyle/typestyle/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "fb9ede1aa7048e201ce75841ff35e7645a15bb3c2ec5bf566cfa5bd554f6ccf24f228f3cc065e877b7476b4209d547beb277078f659931910f25102ac15adaa0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "xlsx@0.20.3",
+      "type": "library",
+      "name": "xlsx",
+      "version": "0.20.3",
+      "scope": "required",
+      "author": "sheetjs",
+      "description": "SheetJS Spreadsheet data parser and writer",
+      "purl": "pkg:npm/xlsx@0.20.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://git.sheetjs.com/SheetJS/sheetjs"
+        },
+        {
+          "type": "website",
+          "url": "https://sheetjs.com/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://git.sheetjs.com/SheetJS/sheetjs/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a0b0eade3c3b01c2ea2961f60210a9553665f267fa5f661178ff8d7a1d12254cd5fc1759623b61f78b46e6da22301d4f3eb62dc4e09f6a850292fb6e1fedc024"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "tableau-extension-exportall@2.3.1",
+      "dependsOn": [
+        "@material-ui/core@4.12.4",
+        "@material-ui/icons@4.11.3",
+        "@tableau/tableau-ui@3.14.0",
+        "compare-versions@3.6.0",
+        "file-saver@2.0.5",
+        "react@17.0.2",
+        "react-dom@17.0.2",
+        "xlsx@0.20.3"
+      ]
+    },
+    {
+      "ref": "@babel/runtime@7.29.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "@emotion/hash@0.8.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@material-ui/core@4.12.4",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "@material-ui/styles@4.11.5",
+        "@material-ui/system@4.12.2",
+        "@material-ui/types@5.1.0",
+        "@material-ui/utils@4.11.3",
+        "@types/react-transition-group@4.4.12",
+        "clsx@1.2.1",
+        "hoist-non-react-statics@3.3.2",
+        "popper.js@1.16.1-lts",
+        "prop-types@15.8.1",
+        "react-is@17.0.2",
+        "react-transition-group@4.4.5"
+      ]
+    },
+    {
+      "ref": "@material-ui/icons@4.11.3",
+      "dependsOn": [
+        "@babel/runtime@7.29.7"
+      ]
+    },
+    {
+      "ref": "@material-ui/styles@4.11.5",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "@emotion/hash@0.8.0",
+        "@material-ui/types@5.1.0",
+        "@material-ui/utils@4.11.3",
+        "clsx@1.2.1",
+        "csstype@2.6.21",
+        "hoist-non-react-statics@3.3.2",
+        "jss@10.10.0",
+        "jss-plugin-camel-case@10.10.0",
+        "jss-plugin-default-unit@10.10.0",
+        "jss-plugin-global@10.10.0",
+        "jss-plugin-nested@10.10.0",
+        "jss-plugin-props-sort@10.10.0",
+        "jss-plugin-rule-value-function@10.10.0",
+        "jss-plugin-vendor-prefixer@10.10.0",
+        "prop-types@15.8.1"
+      ]
+    },
+    {
+      "ref": "@material-ui/system@4.12.2",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "@material-ui/utils@4.11.3",
+        "csstype@2.6.21",
+        "prop-types@15.8.1"
+      ]
+    },
+    {
+      "ref": "@material-ui/types@5.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@material-ui/utils@4.11.3",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "prop-types@15.8.1",
+        "react-is@17.0.2"
+      ]
+    },
+    {
+      "ref": "@tableau/tableau-ui@3.14.0",
+      "dependsOn": [
+        "react-animate-height@2.1.2",
+        "react-transition-group@4.4.5",
+        "typestyle@2.0.4"
+      ]
+    },
+    {
+      "ref": "@types/react-transition-group@4.4.12",
+      "dependsOn": []
+    },
+    {
+      "ref": "classnames@2.5.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "clsx@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "compare-versions@3.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "css-vendor@2.0.8",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "is-in-browser@1.1.3"
+      ]
+    },
+    {
+      "ref": "csstype@2.6.21",
+      "dependsOn": []
+    },
+    {
+      "ref": "dom-helpers@5.2.1",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "csstype@3.2.3"
+      ]
+    },
+    {
+      "ref": "csstype@3.2.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "file-saver@2.0.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "free-style@2.6.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "hoist-non-react-statics@3.3.2",
+      "dependsOn": [
+        "react-is@16.13.1"
+      ]
+    },
+    {
+      "ref": "react-is@16.13.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "hyphenate-style-name@1.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "is-in-browser@1.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "js-tokens@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "jss@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "csstype@3.2.3",
+        "is-in-browser@1.1.3",
+        "tiny-warning@1.0.3"
+      ]
+    },
+    {
+      "ref": "jss-plugin-camel-case@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "hyphenate-style-name@1.1.0",
+        "jss@10.10.0"
+      ]
+    },
+    {
+      "ref": "jss-plugin-default-unit@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "jss@10.10.0"
+      ]
+    },
+    {
+      "ref": "jss-plugin-global@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "jss@10.10.0"
+      ]
+    },
+    {
+      "ref": "jss-plugin-nested@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "jss@10.10.0",
+        "tiny-warning@1.0.3"
+      ]
+    },
+    {
+      "ref": "jss-plugin-props-sort@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "jss@10.10.0"
+      ]
+    },
+    {
+      "ref": "jss-plugin-rule-value-function@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "jss@10.10.0",
+        "tiny-warning@1.0.3"
+      ]
+    },
+    {
+      "ref": "jss-plugin-vendor-prefixer@10.10.0",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "css-vendor@2.0.8",
+        "jss@10.10.0"
+      ]
+    },
+    {
+      "ref": "loose-envify@1.4.0",
+      "dependsOn": [
+        "js-tokens@4.0.0"
+      ]
+    },
+    {
+      "ref": "object-assign@4.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "popper.js@1.16.1-lts",
+      "dependsOn": []
+    },
+    {
+      "ref": "prop-types@15.8.1",
+      "dependsOn": [
+        "loose-envify@1.4.0",
+        "object-assign@4.1.1",
+        "react-is@16.13.1"
+      ]
+    },
+    {
+      "ref": "react@17.0.2",
+      "dependsOn": [
+        "loose-envify@1.4.0",
+        "object-assign@4.1.1"
+      ]
+    },
+    {
+      "ref": "react-animate-height@2.1.2",
+      "dependsOn": [
+        "classnames@2.5.1",
+        "prop-types@15.8.1"
+      ]
+    },
+    {
+      "ref": "react-dom@17.0.2",
+      "dependsOn": [
+        "loose-envify@1.4.0",
+        "object-assign@4.1.1",
+        "scheduler@0.20.2"
+      ]
+    },
+    {
+      "ref": "react-is@17.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "react-transition-group@4.4.5",
+      "dependsOn": [
+        "@babel/runtime@7.29.7",
+        "dom-helpers@5.2.1",
+        "loose-envify@1.4.0",
+        "prop-types@15.8.1"
+      ]
+    },
+    {
+      "ref": "scheduler@0.20.2",
+      "dependsOn": [
+        "loose-envify@1.4.0",
+        "object-assign@4.1.1"
+      ]
+    },
+    {
+      "ref": "tiny-warning@1.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "typestyle@2.0.4",
+      "dependsOn": [
+        "csstype@2.6.21",
+        "free-style@2.6.1"
+      ]
+    },
+    {
+      "ref": "xlsx@0.20.3",
+      "dependsOn": []
+    }
+  ]
+}

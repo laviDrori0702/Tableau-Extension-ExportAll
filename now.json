@@ -15,9 +15,7 @@
       },
     { "src": "/download", "status": 301, "headers": { "Location": "/ExportAll.trex" }},
     { "src": "^/js/(.*)", "dest": "/js/$1" },
-    { "src": "^/static/css/(.*)", "dest": "/static/css/$1" },
-    { "src": "^/static/js/(.*)", "dest": "/static/js/$1" },
-    { "src": "^/static/media/(.*)", "dest": "/static/media/$1" },
+    { "src": "^/assets/(.*)", "dest": "/assets/$1" },
     { "src": "^/manifest.json", "dest": "/manifest.json" },
     { "src": "^/favicon.ico", "dest": "/favicon.ico" },
     { "src": ".*", "dest": "/index.html" }

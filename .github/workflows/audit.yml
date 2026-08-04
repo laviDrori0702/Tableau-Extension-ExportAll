@@ -1,0 +1,21 @@
+name: Dependency audit
+
+on:
+  push:
+    branches: [master, security-remediation]
+  schedule:
+    # Mondays 06:00 UTC — catches advisories published against unchanged code.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high

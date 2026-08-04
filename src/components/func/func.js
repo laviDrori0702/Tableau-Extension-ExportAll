@@ -1,4 +1,4 @@
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
 // Declare this so our linter knows that tableau is a global object
@@ -208,6 +208,9 @@ const exportToExcel = (meta, env, filename) => new Promise((resolve, reject) => 
   buildExcelBlob(meta).then(wb => {
     // add ignoreEC:false to prevent excel crashes during text to column
     var wopts = { bookType:'xlsx', bookSST:false, type:'array', ignoreEC:false };
+    // type:'array' returns an ArrayBuffer, not a Uint8Array — it has byteLength,
+    // no .length and no indexing. Blob() accepts either, so this line is fine;
+    // wrap in new Uint8Array(wbout) before inspecting bytes.
     var wbout = XLSX.write(wb,wopts);
     saveAs(new Blob([wbout],{type:"application/octet-stream"}), xlsFile);
     resolve();
