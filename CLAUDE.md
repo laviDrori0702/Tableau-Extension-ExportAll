@@ -24,7 +24,7 @@ $env:NODE_OPTIONS="--openssl-legacy-provider"; npm start # PowerShell
 
 npm run build      # plain CRA build
 npm run release    # build + copy index.html into build/configure and build/desktopexport
-npm test           # react-scripts test (no test files exist yet)
+npm test           # react-scripts test
 ```
 
 `NODE_OPTIONS` in `.env` does **not** work — Node reads it at process launch, before
@@ -80,9 +80,13 @@ from view mode.
 `decodeRow` maps Tableau data types to SheetJS cell types (`n`/`s`/`b`/`z`; numbers use
 the raw `value`, dates use `formattedValue`) → `XLSX.write` → `file-saver`.
 
-`buildExcelBlob` resolves by counting completed sheets against `totalSheets` rather than
-awaiting a `Promise.all`. If any sheet's `getSummaryDataAsync` rejects, the count never
-lands and the returned promise silently never settles.
+`buildExcelBlob` awaits a `Promise.all` over per-sheet `buildWorksheet` calls, so tab and
+column order follow the configured order and one failed sheet rejects the whole export
+rather than hanging it. Don't reintroduce a completion counter here — the old version
+counted finished sheets against a total, which meant a rejected `getSummaryDataAsync`
+left the promise unsettled forever and the button silently did nothing. Rejections must
+stay chained: `exportToExcel` returns its promise, and `Extension.clickExportHandler`
+catches it.
 
 Environment branching in `Extension.clickExportHandler()`: on Server, export directly;
 on Desktop, export directly only if `tableauVersion >= 2019.4`, otherwise open the
@@ -115,6 +119,15 @@ Keep the two in sync.
   Tableau, `@material-ui/core` for the rest. Prefer tableau-ui in Configure.
 - `xlsx` is pinned at `^0.16.9` and `postcss` is pinned through `overrides`. Both pins
   are deliberate; check before bumping.
+- Two more `overrides` keep the Babel tree compatible with react-scripts 4, which hard-pins
+  `@babel/core` at `7.12.3`: `@babel/preset-env` at `7.21.5` and
+  `babel-preset-current-node-syntax` at `1.0.1`. Both float into versions that pull
+  `@babel/plugin-syntax-import-attributes`, which requires `@babel/core` >= 7.22 and breaks
+  `npm test` with `Requires Babel "^7.22.0"`. The plugin has no release older than 7.22, so
+  pinning it directly can't work — pin its parents.
+- `.npmrc` sets `legacy-peer-deps=true`. `@tableau/tableau-ui@3.2.0` declares a peer of
+  React 16 while this project runs React 17, so npm 7+ fails the install with `ERESOLVE`
+  without it — including the `npm install` in `render.yaml`'s build command.
 
 ## Agent skills
 
