@@ -96,7 +96,7 @@ on Desktop, export directly only if `tableauVersion >= 2019.4`, otherwise open t
 
 **For local dev, point a throwaway copy at `http://localhost:3000` and keep it out of
 the repo.** The committed `.trex` must carry the production URL — on this fork that is
-the Render deploy, `https://tableau-extension-exportall.onrender.com`, not the upstream
+the Render deploy, `https://tableau-extension-exportall-mu1y.onrender.com`, not the upstream
 Vercel domain. Tableau accepts plain http for localhost, so no certificate work is
 needed.
 

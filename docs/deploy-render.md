@@ -4,7 +4,7 @@ This fork is hosted as a **Render static site**, provisioned from `render.yaml` 
 root. Export All is frontend-only — a Create React App build, no backend, no API keys, no
 environment variables — so the whole deployment is one static service.
 
-Production URL: `https://tableau-extension-exportall.onrender.com`
+Production URL: `https://tableau-extension-exportall-mu1y.onrender.com`
 
 ## First deploy
 
@@ -37,7 +37,7 @@ harmless and the old Vercel deploy may still use it.
 
 Do all of these before telling anyone the URL:
 
-- [ ] `https://tableau-extension-exportall.onrender.com/` loads (the Export All button).
+- [ ] `https://tableau-extension-exportall-mu1y.onrender.com/` loads (the Export All button).
 - [ ] `/configure` loads **directly** in a browser tab — not just via in-app navigation.
       This is what catches a broken asset path (see Troubleshooting).
 - [ ] `/desktopexport` loads directly.
@@ -60,7 +60,7 @@ Distributing it: hand users the `.trex` file, or the `/download` short URL.
 ### Tableau Server / Cloud safe list
 
 Tableau blocks unsandboxed extensions that aren't safe-listed. A site admin must add
-`https://tableau-extension-exportall.onrender.com` to
+`https://tableau-extension-exportall-mu1y.onrender.com` to
 **Settings → Extensions → Allow specific extensions**. This is a Tableau-side action; nothing
 in this repo can do it.
 

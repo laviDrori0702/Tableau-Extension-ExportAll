@@ -14,7 +14,7 @@ Good question! We'd love to allow the Export All extension to be sandboxed, it w
 Sadly when it came to the implementation of a sandboxed extension the downloading of a file by an extension was considered to be a vector for attack and so was blocked. By definition of its primary function of allowing you to download your dashboard's summary data in an Excel file the Export All extension can never be sandboxed. Please send any sad face emojis 😔 to Tableau.
 
 ## Standard Installation
-1. Download the [.trex file](https://tableau-extension-exportall.onrender.com/download)
+1. Download the [.trex file](https://tableau-extension-exportall-mu1y.onrender.com/download)
 2. In your dashboard drag out the 'Extension' object
 3. Select 'My Extensions' & open the downloaded ExportAll.trex file
 4. Configure which sheets & columns you'd like to export, save changes & close the configuration window
