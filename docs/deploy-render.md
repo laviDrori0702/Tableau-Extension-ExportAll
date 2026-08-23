@@ -87,15 +87,12 @@ and `extension-version` in both `.trex` copies.
 
 ```bash
 npm install
-
-# Node 17+ requires the legacy OpenSSL flag — webpack 4 uses an MD4 hash that modern
-# OpenSSL removed. Without it: ERR_OSSL_EVP_UNSUPPORTED.
-$env:NODE_OPTIONS="--openssl-legacy-provider"; npm start   # PowerShell
-NODE_OPTIONS=--openssl-legacy-provider npm start           # bash
+npm start
 ```
 
-`NODE_OPTIONS` in `.env` does **not** work — Node reads it at process launch, before
-react-scripts loads `.env`.
+No `NODE_OPTIONS` flag is needed. react-scripts 5 / webpack 5 dropped the MD4 hash that
+used to make Node 17+ fail with `ERR_OSSL_EVP_UNSUPPORTED`, which is also what let Render
+build on its default modern Node.
 
 To point Tableau Desktop at the dev server, copy `ExportAll.trex` somewhere outside the repo,
 change its `<url>` to `http://localhost:3000`, and load that copy. Tableau accepts plain http
@@ -109,7 +106,7 @@ the committed manifests must carry the production URL.
 Hosting moved to Render because the Vercel deployment
 (`exportallextension.theinformationlab.io`) belongs to The Information Lab, the upstream
 project: we can't redeploy it, can't read its build logs, and can't get our deliberate
-dependency pins (the `postcss` / `xlsx` overrides) into what it serves.
+dependency pins into what it serves.
 
 The file stays because existing users' `.trex` files still point at the Vercel domain, and
 deleting the config would strand them. Decommissioning Vercel — redistributing `.trex` files,

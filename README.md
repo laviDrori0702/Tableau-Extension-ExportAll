@@ -36,23 +36,7 @@ verification, `.trex` distribution, and troubleshooting.
 Running the dev server against Tableau Desktop:
 
 1. `npm install`
-2. Start the dev server. On **Node 17 or newer** you must pass the legacy OpenSSL
-   flag, because webpack 4 (via react-scripts 4) uses an MD4 hash that was removed
-   from Node's default OpenSSL provider:
-
-   ```bash
-   # bash / git-bash
-   NODE_OPTIONS=--openssl-legacy-provider npm start
-   ```
-   ```powershell
-   # PowerShell
-   $env:NODE_OPTIONS="--openssl-legacy-provider"; npm start
-   ```
-
-   Without it the build fails with `error:0308010C ... ERR_OSSL_EVP_UNSUPPORTED`.
-   Note that putting `NODE_OPTIONS` in a `.env` file does **not** work — Node reads
-   that variable when the process launches, which is before react-scripts loads
-   `.env`. It has to be set in the environment or on the command line.
+2. `npm start` — no special flags or environment variables needed on any Node version.
 3. Copy `ExportAll.trex` and change the `<url>` tag to `http://localhost:3000`.
    Tableau accepts plain http for localhost, so no certificate setup is needed.
    Keep this copy out of the repo — the committed `.trex` must keep the

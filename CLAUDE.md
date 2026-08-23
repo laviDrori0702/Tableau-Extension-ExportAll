@@ -9,7 +9,7 @@ an "Export All" button to a dashboard. One click writes the selected sheets and 
 of summary data into a single `.xlsx` workbook, client-side. No data ever leaves the
 browser — there is no backend.
 
-Create React App (react-scripts 4) + React 17. Not sandboxed, and cannot be: Tableau
+Create React App (react-scripts 5) + React 17. Not sandboxed, and cannot be: Tableau
 blocks file downloads from sandboxed extensions, which is this extension's whole purpose.
 
 ## Commands
@@ -17,18 +17,15 @@ blocks file downloads from sandboxed extensions, which is this extension's whole
 ```bash
 npm install
 
-# Dev server. On Node 17+ the legacy OpenSSL flag is REQUIRED — webpack 4 uses an
-# MD4 hash removed from modern OpenSSL. Without it: ERR_OSSL_EVP_UNSUPPORTED.
-NODE_OPTIONS=--openssl-legacy-provider npm start        # bash
-$env:NODE_OPTIONS="--openssl-legacy-provider"; npm start # PowerShell
-
+npm start          # dev server — no NODE_OPTIONS flag needed
 npm run build      # plain CRA build
 npm run release    # build + copy index.html into build/configure and build/desktopexport
 npm test           # react-scripts test
 ```
 
-`NODE_OPTIONS` in `.env` does **not** work — Node reads it at process launch, before
-react-scripts loads `.env`.
+react-scripts 5 ships webpack 5, which dropped the MD4 hash that made older Node fail with
+`ERR_OSSL_EVP_UNSUPPORTED`. The `--openssl-legacy-provider` flag this project used to require
+is obsolete — don't reintroduce it.
 
 Tableau opens `/configure` and `/desktopexport` as real URLs in popup dialogs, so those
 paths have to resolve. `npm run release` is the deployable artifact **on a host without
@@ -117,17 +114,22 @@ Keep the two in sync.
   declare `/* global tableau */` for the linter.
 - Two UI kits coexist: `@tableau/tableau-ui` for anything that should look native to
   Tableau, `@material-ui/core` for the rest. Prefer tableau-ui in Configure.
-- `xlsx` is pinned at `^0.16.9` and `postcss` is pinned through `overrides`. Both pins
-  are deliberate; check before bumping.
-- Two more `overrides` keep the Babel tree compatible with react-scripts 4, which hard-pins
-  `@babel/core` at `7.12.3`: `@babel/preset-env` at `7.21.5` and
-  `babel-preset-current-node-syntax` at `1.0.1`. Both float into versions that pull
-  `@babel/plugin-syntax-import-attributes`, which requires `@babel/core` >= 7.22 and breaks
-  `npm test` with `Requires Babel "^7.22.0"`. The plugin has no release older than 7.22, so
-  pinning it directly can't work — pin its parents.
+- `xlsx` is pinned at `^0.16.9` and `compare-versions` at `^3.6.0`. Both pins are
+  deliberate; check before bumping. `compare-versions` v4+ is ESM-only and will break.
 - `.npmrc` sets `legacy-peer-deps=true`. `@tableau/tableau-ui@3.2.0` declares a peer of
   React 16 while this project runs React 17, so npm 7+ fails the install with `ERESOLVE`
   without it — including the `npm install` in `render.yaml`'s build command.
+- **The `ajv` entries in `overrides` exist because of that `legacy-peer-deps` flag.**
+  react-scripts 5 pulls both `ajv-keywords@5` (peer: `ajv@8`) and `ajv-keywords@3`
+  (peer: `ajv@6`). `legacy-peer-deps` skips peer installation entirely, so npm hoists
+  eslint's `ajv@6` to the root and `ajv-keywords@5` dies with
+  `Cannot find module 'ajv/dist/compile/codegen'`. The fix is a root `ajv@8` devDependency
+  plus nested `ajv@6` overrides for `eslint` and `fork-ts-checker-webpack-plugin`.
+  A single root pin can't work — both majors are genuinely required. Note `overrides`
+  alone can't fix this: it only rewrites declared dependency ranges, and these are peers.
+- `resolve-url-loader` is overridden to `^5.0.0`. CRA 5 depends on v4, which carries a
+  private `postcss@7` with open advisories; v5 uses postcss 8. Sass isn't used here, so
+  the loader is barely exercised — the override is purely to clear the audit.
 
 ## Agent skills
 
