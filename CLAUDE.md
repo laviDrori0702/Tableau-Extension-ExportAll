@@ -124,7 +124,7 @@ Keep the two in sync.
   gone because CRA 5 ships postcss 8 natively, which is already the patched line.
 - `.npmrc` sets `legacy-peer-deps=true`. `@tableau/tableau-ui@3.2.0` declares a peer of
   React 16 while this project runs React 17, so npm 7+ fails the install with `ERESOLVE`
-  without it — including the `npm install` in `render.yaml`'s build command.
+  without it — locally and in any CI or deploy install.
 - **The `ajv` entries in `overrides` exist because of that `legacy-peer-deps` flag.**
   react-scripts 5 pulls both `ajv-keywords@5` (peer: `ajv@8`) and `ajv-keywords@3`
   (peer: `ajv@6`). `legacy-peer-deps` skips peer installation entirely, so npm hoists
