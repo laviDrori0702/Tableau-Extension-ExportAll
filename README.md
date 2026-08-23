@@ -25,5 +25,33 @@ Sadly when it came to the implementation of a sandboxed extension the downloadin
 3. Modify the included ExportAll.trex file changing the value between the <url></url> tags to be the URL of the web server hosting the extension
 4. Distribute the .trex file to you users and follow the standard installation steps from 2.
 
+## Local Development
+
+Running the dev server against Tableau Desktop:
+
+1. `npm install`
+2. Start the dev server. On **Node 17 or newer** you must pass the legacy OpenSSL
+   flag, because webpack 4 (via react-scripts 4) uses an MD4 hash that was removed
+   from Node's default OpenSSL provider:
+
+   ```bash
+   # bash / git-bash
+   NODE_OPTIONS=--openssl-legacy-provider npm start
+   ```
+   ```powershell
+   # PowerShell
+   $env:NODE_OPTIONS="--openssl-legacy-provider"; npm start
+   ```
+
+   Without it the build fails with `error:0308010C ... ERR_OSSL_EVP_UNSUPPORTED`.
+   Note that putting `NODE_OPTIONS` in a `.env` file does **not** work — Node reads
+   that variable when the process launches, which is before react-scripts loads
+   `.env`. It has to be set in the environment or on the command line.
+3. Copy `ExportAll.trex` and change the `<url>` tag to `http://localhost:3000`.
+   Tableau accepts plain http for localhost, so no certificate setup is needed.
+   Keep this copy out of the repo — the committed `.trex` must keep the
+   production URL.
+4. In your dashboard drag out the 'Extension' object and open your local .trex file.
+
 ## Bugs & Feature Requests
 Please submit any bugs or feature requests to the repository's [issues page](https://github.com/TheInformationLab/Tableau-Extension-ExportAll/issues)
