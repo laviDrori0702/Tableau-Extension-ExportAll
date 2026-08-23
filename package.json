@@ -2,7 +2,7 @@
   "name": "tableau-extension-exportall",
   "version": "2.3.1",
   "private": true,
-  "homepage": "..",
+  "homepage": "/",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",

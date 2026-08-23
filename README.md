@@ -14,7 +14,7 @@ Good question! We'd love to allow the Export All extension to be sandboxed, it w
 Sadly when it came to the implementation of a sandboxed extension the downloading of a file by an extension was considered to be a vector for attack and so was blocked. By definition of its primary function of allowing you to download your dashboard's summary data in an Excel file the Export All extension can never be sandboxed. Please send any sad face emojis 😔 to Tableau.
 
 ## Standard Installation
-1. Download the [.trex file](https://exportallextension.theinformationlab.io/download)
+1. Download the [.trex file](https://tableau-extension-exportall.onrender.com/download)
 2. In your dashboard drag out the 'Extension' object
 3. Select 'My Extensions' & open the downloaded ExportAll.trex file
 4. Configure which sheets & columns you'd like to export, save changes & close the configuration window
@@ -24,6 +24,12 @@ Sadly when it came to the implementation of a sandboxed extension the downloadin
 2. Unpack & copy the contents of the build folder into the root of your web server
 3. Modify the included ExportAll.trex file changing the value between the <url></url> tags to be the URL of the web server hosting the extension
 4. Distribute the .trex file to you users and follow the standard installation steps from 2.
+
+## Deployment
+
+This fork is hosted on Render, provisioned from `render.yaml`. See
+[docs/deploy-render.md](docs/deploy-render.md) for the deploy walkthrough, post-deploy
+verification, `.trex` distribution, and troubleshooting.
 
 ## Local Development
 
