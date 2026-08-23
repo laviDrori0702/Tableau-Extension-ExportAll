@@ -128,15 +128,19 @@ function Extension (props) {
     });
   }
 
+  function exportFailed(error) {
+    console.error('[Extension.js] Export failed', error);
+  }
+
   function clickExportHandler() {
     let sheetSettings = tableau.extensions.settings.get('selectedSheets');
     const meta = JSON.parse(sheetSettings);
     if (tableau.extensions.environment.context === "server") {
-      exportToExcel(meta, 'server', props.filename);
+      exportToExcel(meta, 'server', props.filename).catch(exportFailed);
     } else {
       console.log('[Extension.js] Tableau Version', tableau.extensions.environment.tableauVersion);
       if (compareVersions.compare(tableau.extensions.environment.tableauVersion, '2019.4.0', '>=') ) {
-        exportToExcel(meta, 'desktop', props.filename);
+        exportToExcel(meta, 'desktop', props.filename).catch(exportFailed);
       } else {
         desktopExportHandler ();
       }

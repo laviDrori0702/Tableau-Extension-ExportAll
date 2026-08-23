@@ -115,6 +115,7 @@ const getSheetColumns = (sheet, existingCols, modified) => new Promise((resolve,
   })
   .catch(error => {
     console.log('[func.js] Error with getSummaryDataAsync', sheet, error);
+    reject(error);
   });
 });
 
@@ -200,88 +201,67 @@ const revalidateMeta = (existing) => new Promise((resolve, reject) => {
   });
 });
 
-const exportToExcel = (meta, env, filename) => new Promise((resolve, reject) => {
+const exportToExcel = (meta, env, filename) => {
   let xlsFile = "export.xlsx";
   if (filename && filename.length > 0) {
     xlsFile = filename + ".xlsx";
   }
-  buildExcelBlob(meta).then(wb => {
+  return buildExcelBlob(meta).then(wb => {
     // add ignoreEC:false to prevent excel crashes during text to column
     var wopts = { bookType:'xlsx', bookSST:false, type:'array', ignoreEC:false };
     var wbout = XLSX.write(wb,wopts);
     saveAs(new Blob([wbout],{type:"application/octet-stream"}), xlsFile);
-    resolve();
   });
-});
+};
 
 
 
 // krisd: move excel creation to caller (to support extra export to methodss)
 // callback receives a blob to save or transfer
-const buildExcelBlob = (meta) => new Promise((resolve, reject) => {
+const buildExcelBlob = (meta) => {
   console.log("[func.js] Got Meta", meta);
-  // func.saveSettings(meta, function(newSettings) {
-    // console.log("Saved settings", newSettings);
   const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-  const wb = XLSX.utils.book_new();
-  let totalSheets = 0;
-  let sheetCount = 0;
-  const sheetList = [];
-  const columnList = [];
-  const tabNames = [];
-  for (let i =0; i < meta.length; i++) {
-    if (meta[i] && meta[i].selected) {
-      let tabName = meta[i].changeName || meta[i].sheetName;
-      tabName = tabName.replace(/[*?/\\[\]]/gi, '');
-      sheetList.push(meta[i].sheetName);
-      tabNames.push(tabName);
-      columnList.push(meta[i].columns);
-      totalSheets = totalSheets + 1;
+  const selected = meta.filter(sheetMeta => sheetMeta && sheetMeta.selected);
+
+  // Promise.all, not a completion counter: a rejected getSummaryDataAsync used to
+  // leave the count short of the total, so this promise never settled and the export
+  // silently hung. Awaiting in order also keeps tab/column order as configured.
+  return Promise.all(selected.map(sheetMeta => {
+    const sheet = worksheets.find(s => s.name === sheetMeta.sheetName);
+    if (!sheet) {
+      return Promise.reject(new Error(`Sheet not found in dashboard: ${sheetMeta.sheetName}`));
     }
-  }
-  sheetList.map((metaSheet, idx) => {
-    //console.log("[func.js] Finding sheet", metaSheet, worksheets);
-    const sheet = worksheets.find(s => s.name === metaSheet);
-    // eslint-disable-next-line
-    sheet.getSummaryDataAsync({ignoreSelection: true}).then((data) => {
-      const columns = data.columns;
-      const columnMeta = columnList[sheetCount];
-      const headerOrder = [];
-      columnMeta.map((colMeta, idx) => {
-        if (colMeta && colMeta.selected) {
-          headerOrder.push(colMeta.changeName || colMeta.name);
-        }
-        return colMeta;
-      });
-      columns.map((column, idx) => {
-        //console.log("[func.js] Finding column", column.fieldName, columnMeta);
-        const objCol = columnMeta.find(o => o.name === column.fieldName);
-        if (objCol) {
-          let col = { ...column, selected: objCol.selected  }
-          col.outputName = objCol.changeName || objCol.name;
-          columns[idx] = col;
-          return col;
-        } else {
-          return null;
-        }
-      });
-      //console.log("[func.js] Running decodeRows", columns, data.data);
-      decodeDataset(columns, data.data)
-        .then((rows) => {
-          //console.log("[func.js] decodeRows returned", rows);
-          console.log("[func.js] Header Order", headerOrder);
-          var ws = XLSX.utils.json_to_sheet(rows, {header: headerOrder});
-          var sheetname = tabNames[sheetCount];
-          sheetCount = sheetCount + 1;
-          XLSX.utils.book_append_sheet(wb, ws, sheetname);
-          if (sheetCount === totalSheets) {
-            resolve(wb);
-          }
-      });
+    return buildWorksheet(sheet, sheetMeta.columns);
+  })).then(sheets => {
+    const wb = XLSX.utils.book_new();
+    sheets.forEach((ws, idx) => {
+      const tabName = (selected[idx].changeName || selected[idx].sheetName).replace(/[*?/\\[\]]/gi, '');
+      XLSX.utils.book_append_sheet(wb, ws, tabName);
     });
-    return sheet;
+    return wb;
   });
-});
+};
+
+// One sheet's summary data -> one XLSX worksheet
+const buildWorksheet = (sheet, columnMeta) => (
+  sheet.getSummaryDataAsync({ignoreSelection: true}).then((data) => {
+    const headerOrder = columnMeta
+      .filter(colMeta => colMeta && colMeta.selected)
+      .map(colMeta => colMeta.changeName || colMeta.name);
+    // New array rather than mutating Tableau's; the spread keeps _dataType, which
+    // decodeRow reads.
+    const columns = data.columns.map(column => {
+      const objCol = columnMeta.find(o => o && o.name === column.fieldName);
+      if (!objCol) {
+        return { ...column, selected: false };
+      }
+      return { ...column, selected: objCol.selected, outputName: objCol.changeName || objCol.name };
+    });
+    console.log("[func.js] Header Order", headerOrder);
+    return decodeDataset(columns, data.data)
+      .then(rows => XLSX.utils.json_to_sheet(rows, {header: headerOrder}));
+  })
+);
 
 
 // krisd: Remove recursion to work with larger data sets
