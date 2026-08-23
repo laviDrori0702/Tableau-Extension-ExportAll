@@ -13,7 +13,23 @@ Good question! We'd love to allow the Export All extension to be sandboxed, it w
 
 Sadly when it came to the implementation of a sandboxed extension the downloading of a file by an extension was considered to be a vector for attack and so was blocked. By definition of its primary function of allowing you to download your dashboard's summary data in an Excel file the Export All extension can never be sandboxed. Please send any sad face emojis 😔 to Tableau.
 
+## Local Development
+
+**This is the `dev/environment` branch** — the committed `ExportAll.trex` already points at
+`http://localhost:3000`, so it works against the dev server as-is.
+
+1. `npm install`
+2. `npm start` — no special flags or environment variables needed on any Node version.
+3. In your dashboard drag out the 'Extension' object and open `ExportAll.trex` from this
+   repo. Tableau accepts plain http for localhost, so no certificate setup is needed.
+4. Configure which sheets & columns you'd like to export, save changes & close the
+   configuration window.
+
 ## Standard Installation
+
+For the hosted extension, use the `prod/environment` branch — the `.trex` on this branch
+points at localhost and will not work for end users.
+
 1. Download the [.trex file](https://tableau-extension-exportall-mu1y.onrender.com/download)
 2. In your dashboard drag out the 'Extension' object
 3. Select 'My Extensions' & open the downloaded ExportAll.trex file
@@ -27,21 +43,9 @@ Sadly when it came to the implementation of a sandboxed extension the downloadin
 
 ## Deployment
 
-This fork is hosted on Render, provisioned from `render.yaml`. See
+Deploy config lives on `prod/environment` — `render.yaml` is not on this branch. See
 [docs/deploy-render.md](docs/deploy-render.md) for the deploy walkthrough, post-deploy
 verification, `.trex` distribution, and troubleshooting.
-
-## Local Development
-
-Running the dev server against Tableau Desktop:
-
-1. `npm install`
-2. `npm start` — no special flags or environment variables needed on any Node version.
-3. Copy `ExportAll.trex` and change the `<url>` tag to `http://localhost:3000`.
-   Tableau accepts plain http for localhost, so no certificate setup is needed.
-   Keep this copy out of the repo — the committed `.trex` must keep the
-   production URL.
-4. In your dashboard drag out the 'Extension' object and open your local .trex file.
 
 ## Bugs & Feature Requests
 Please submit any bugs or feature requests to the repository's [issues page](https://github.com/TheInformationLab/Tableau-Extension-ExportAll/issues)

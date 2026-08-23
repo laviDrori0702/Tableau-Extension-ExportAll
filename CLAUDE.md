@@ -31,9 +31,10 @@ Tableau opens `/configure` and `/desktopexport` as real URLs in popup dialogs, s
 paths have to resolve. `npm run release` is the deployable artifact **on a host without
 rewrite support** — it copies `index.html` to each of those paths on disk.
 
-On the Render deploy, `render.yaml` rewrites all routes to `index.html`, so the plain
-`npm run build` is what Render runs and the copies are redundant. See
-`docs/deploy-render.md`. Don't "fix" the Render build command to `release`.
+`render.yaml` is **not on this branch** — `dev/environment` carries no deploy config. On
+`prod/environment` it rewrites all routes to `index.html`, so the plain `npm run build` is
+what Render runs and the copies are redundant. See `docs/deploy-render.md`; don't "fix" the
+Render build command to `release`, and don't reintroduce `render.yaml` here.
 
 ## Architecture
 
@@ -94,11 +95,14 @@ on Desktop, export directly only if `tableauVersion >= 2019.4`, otherwise open t
 `ExportAll.trex` (and the copy in `public/`) is the file a user loads into Tableau. Its
 `<source-location><url>` decides where Tableau fetches the extension from.
 
-**For local dev, point a throwaway copy at `http://localhost:3000` and keep it out of
-the repo.** The committed `.trex` must carry the production URL — on this fork that is
-the Render deploy, `https://tableau-extension-exportall-mu1y.onrender.com`, not the upstream
-Vercel domain. Tableau accepts plain http for localhost, so no certificate work is
-needed.
+**On `dev/environment` both committed `.trex` copies point at `http://localhost:3000` by
+design** — this is the local dev branch, so the manifest works against the dev server with
+no throwaway copy. Don't "fix" that URL back to the production host on this branch.
+
+The production-URL rule applies to `prod/environment` and `master`: there the committed
+`.trex` must carry `https://tableau-extension-exportall-mu1y.onrender.com` (the Render
+deploy, not the upstream Vercel domain), and a localhost copy stays out of the repo.
+Tableau accepts plain http for localhost, so no certificate work is needed.
 
 Bumping the extension version means bumping it in **all three** places: `package.json`
 (`version`), and `extension-version` in both `ExportAll.trex` and `public/ExportAll.trex`.

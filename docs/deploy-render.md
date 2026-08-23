@@ -1,5 +1,10 @@
 # Deploying Export All to Render
 
+> **Not on this branch.** `render.yaml` is deliberately absent on `dev/environment` — this is
+> the local dev branch and carries no deploy config. The live deploy runs from
+> `prod/environment`. This doc is kept here for reference; note in particular that `now.json`
+> and `public/now.json` are dead Vercel leftovers on every branch.
+
 This fork is hosted as a **Render static site**, provisioned from `render.yaml` at the repo
 root. Export All is frontend-only — a Create React App build, no backend, no API keys, no
 environment variables — so the whole deployment is one static service.
