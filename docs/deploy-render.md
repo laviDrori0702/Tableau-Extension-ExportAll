@@ -106,7 +106,7 @@ the committed manifests must carry the production URL.
 Hosting moved to Render because the Vercel deployment
 (`exportallextension.theinformationlab.io`) belongs to The Information Lab, the upstream
 project: we can't redeploy it, can't read its build logs, and can't get our deliberate
-dependency pins into what it serves.
+dependency pins (the `xlsx`, `ajv` and `resolve-url-loader` entries) into what it serves.
 
 The file stays because existing users' `.trex` files still point at the Vercel domain, and
 deleting the config would strand them. Decommissioning Vercel — redistributing `.trex` files,

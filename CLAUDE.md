@@ -114,8 +114,10 @@ Keep the two in sync.
   declare `/* global tableau */` for the linter.
 - Two UI kits coexist: `@tableau/tableau-ui` for anything that should look native to
   Tableau, `@material-ui/core` for the rest. Prefer tableau-ui in Configure.
-- `xlsx` is pinned at `^0.16.9` and `compare-versions` at `^3.6.0`. Both pins are
-  deliberate; check before bumping. `compare-versions` v4+ is ESM-only and will break.
+- `xlsx` (`^0.16.9`) and `compare-versions` (`^3.6.0`) are long-standing deliberate
+  pins — neither is related to the react-scripts 5 upgrade. Check before bumping:
+  `compare-versions` v4+ is ESM-only and will break. The old `postcss` override is
+  gone because CRA 5 ships postcss 8 natively, which is already the patched line.
 - `.npmrc` sets `legacy-peer-deps=true`. `@tableau/tableau-ui@3.2.0` declares a peer of
   React 16 while this project runs React 17, so npm 7+ fails the install with `ERESOLVE`
   without it — including the `npm install` in `render.yaml`'s build command.
@@ -125,8 +127,11 @@ Keep the two in sync.
   eslint's `ajv@6` to the root and `ajv-keywords@5` dies with
   `Cannot find module 'ajv/dist/compile/codegen'`. The fix is a root `ajv@8` devDependency
   plus nested `ajv@6` overrides for `eslint` and `fork-ts-checker-webpack-plugin`.
-  A single root pin can't work — both majors are genuinely required. Note `overrides`
-  alone can't fix this: it only rewrites declared dependency ranges, and these are peers.
+  A single root pin can't work — both majors are genuinely required. The root
+  devDependency is the load-bearing half: `overrides` can only rewrite *declared
+  dependency* ranges, and `ajv-keywords` declares `ajv` as a **peer**, so no override
+  on `ajv-keywords` itself has anything to rewrite. Don't try to replace the
+  devDependency with one.
 - `resolve-url-loader` is overridden to `^5.0.0`. CRA 5 depends on v4, which carries a
   private `postcss@7` with open advisories; v5 uses postcss 8. Sass isn't used here, so
   the loader is barely exercised — the override is purely to clear the audit.
