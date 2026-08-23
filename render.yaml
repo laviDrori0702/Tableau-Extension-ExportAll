@@ -22,14 +22,12 @@ services:
         name: Content-Disposition
         value: attachment; filename="ExportAll.trex"
     # Order is load-bearing: first match wins, so the catch-all rewrite goes last.
+    # /ExportAll.trex and the static assets get no explicit route — Render serves a
+    # real file from the publish dir ahead of applying a rewrite. (An identity
+    # rewrite is rejected: "source cannot be the same as destination".)
     routes:
       - type: redirect
         source: /download
-        destination: /ExportAll.trex
-      # Keep the manifest out of the catch-all rather than relying on Render
-      # serving an existing file ahead of a rewrite.
-      - type: rewrite
-        source: /ExportAll.trex
         destination: /ExportAll.trex
       # SPA: /configure and /desktopexport are client-side routes.
       - type: rewrite

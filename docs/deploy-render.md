@@ -142,11 +142,14 @@ This is the highest-risk item in the Render setup and the symptom points nowhere
 versions of the Tableau Extensions API (1.2.0, 1.3.0, 1.4.0) and `min-api-version` in the
 manifest is `1.0`, so those files must stay reachable.
 
-Note the catch-all rewrite (`/*`) matches asset paths too; what saves them is Render serving
-an existing file ahead of a rewrite. That precedence isn't spelled out in Render's docs, which
-is why `/ExportAll.trex` gets an explicit route above the catch-all rather than relying on it.
-If assets ever start returning HTML on a Render change, add explicit routes for `/static/*`
-and `/js/*` the same way.
+Note the catch-all rewrite (`/*`) matches asset paths and `/ExportAll.trex` too; what saves
+them is Render serving an existing file from the publish directory ahead of applying a
+rewrite. An explicit identity rewrite to exempt them is not an option — Render rejects the
+Blueprint with `source cannot be the same as destination`.
+
+So this behaviour is load-bearing and untestable locally. Check `/download` and a deep-route
+asset on the first deploy, and if either ever returns HTML, the fix is to move the file to a
+path the catch-all can't match rather than to add a route.
 
 **Extension doesn't appear in Tableau at all.** Check the safe list (above), and that the
 `.trex` `<url>` matches the deployed URL exactly — scheme included.
