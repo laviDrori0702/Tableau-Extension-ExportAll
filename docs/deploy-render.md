@@ -11,15 +11,17 @@ Production URL: `https://tableau-extension-exportall.onrender.com`
 1. Push the branch you want to deploy (`prod/environment`) to `origin`.
 2. In the Render dashboard: **New → Blueprint**, pick this repository.
 3. Render reads `render.yaml` and proposes one service, `tableau-extension-exportall`
-   (`type: web`, `runtime: static`, `plan: free`). Set the branch to `prod/environment`.
+   (`type: web`, `runtime: static`). Set the branch to `prod/environment`.
 4. **Apply**. Render runs `npm install && npm run build` and publishes `./build`.
 
 `autoDeployTrigger: commit` is set, so every subsequent push to that branch redeploys
 automatically. (Older Blueprints spell this `autoDeploy: true`; Render still honours it, but
 the newer key is the documented one.)
 
-Static sites on Render are CDN-served and never sleep, so the free plan carries no
-cold-start penalty — unlike free *web services*.
+Static sites are CDN-served and never sleep, so there's no cold-start penalty — unlike free
+*web services*. They also carry no `plan` key: there's no instance type to choose, and the
+validator rejects `plan: free` with `no such plan free for service type web`. Hosting is
+free, metered only against workspace bandwidth and build minutes.
 
 ### Which build script Render runs
 
